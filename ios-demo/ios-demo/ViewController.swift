@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate {
     
 
-    @IBOutlet var tableView: UITableView
+    var tableView:  UITableView?
     var data: Dictionary<String, String>[]?
     
     override func viewDidLoad() {
@@ -24,11 +24,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //        [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
 //        
 //        [self setTitle:@"Demo"];
-
+        self.tableView = UITableView(frame:self.view.frame, style:.Plain)
+        self.tableView!.registerClass(UITableViewCell.self, forCellReuseIdentifier: "CELL")
         self.navigationController.view.backgroundColor = UIColor(patternImage: UIImage(named: "background"))
         self.navigationController.navigationBar.setBackgroundImage(UIImage(named: "navbar"), forBarMetrics:.Default)
         self.view.backgroundColor = UIColor.clearColor()
-        self.tableView.backgroundColor = UIColor.clearColor()
+        self.tableView!.backgroundColor = UIColor.clearColor()
         self.navigationController.navigationBar.tintColor = UIColor.whiteColor()
         self.title = "Demo"
         
@@ -59,10 +60,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
     
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        var cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("CELL") as UITableViewCell!
+        if !cell {
+            cell = UITableViewCell(style:.Default, reuseIdentifier: "CELL")
+        }
+//        var cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell!
+//        if (cell == nil) {
+//            cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "Cell")
+//        }
         var dict: Dictionary = self.data![indexPath.row]
         cell.textLabel.text = dict["text"]
-        cell.backgroundView.backgroundColor = UIColor.clearColor()
+//        cell.backgroundView.backgroundColor = UIColor.clearColor()
         cell.selectionStyle = .None
         cell.imageView.image = UIImage(named: "icon")
         return cell

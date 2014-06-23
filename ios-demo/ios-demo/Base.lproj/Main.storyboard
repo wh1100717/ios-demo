@@ -48,6 +48,9 @@
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="RBf-wp-gTa" kind="show" identifier="second_segue" id="f7a-dn-5V1"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <variation key="widthClass=compact" ambiguous="YES">
@@ -63,6 +66,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hUm-N5-nfv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-252" y="25"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="Hpy-FN-93E">
+            <objects>
+                <viewController id="RBf-wp-gTa" customClass="SecondViewController" customModule="ios_demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Nkk-rA-2Nu"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tmt-07-0Gb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wrV-mq-Z6J">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Ox-Bc-xE4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="462" y="25"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Pek-AU-Cpp">

@@ -25,8 +25,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.navigationController.navigationBar.tintColor = UIColor.whiteColor()
         self.title = "Demo"
         
-        self.navigationController.delegate = self
-        
         
         self.data = [
             ["text": "Stylized organs", "icon": "heart"],
@@ -37,7 +35,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             ["text": "Cheers", "icon": "glass"]
         ]
     }
-    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        self.navigationController.delegate = self
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -57,7 +59,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.textLabel.text = dict["text"]
         cell.backgroundColor = UIColor.clearColor()
         cell.selectionStyle = .None
-//        cell.
         cell.image = UIImage(named: dict["icon"])
         return cell
     }
@@ -65,6 +66,27 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
         return 84 as CGFloat
     }
+
+    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+        self.performSegueWithIdentifier("second_segue", sender: self)        
+    }
+
+    func navigationController(navigationController: UINavigationController!, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController!, toViewController toVC: UIViewController!) -> UIViewControllerAnimatedTransitioning!{
+
+        if operation != .None {
+            return nil
+        }
+        return nil
+        
+        
+    }
+
+
+    
+    
+    
+    
+    
     
 
 }

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>37F5853E-460B-41C6-8DA2-D8F2CAC7CB1E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ios-demo3</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>5D85D9B6-210E-4FDD-B85D-ADEF6AF99E47</key>
+		<string>https://github.com/erica/NSDate-Extensions.git</string>
+		<key>F56AAB01-FA2D-4206-A2F9-B3C51B186B35</key>
+		<string>https://github.com/wh1100717/ios-demo.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ios-demo3/ios-demo3.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>5D85D9B6-210E-4FDD-B85D-ADEF6AF99E47</key>
+		<string>../../ios-demo3/ThirdPartLibs/NSDate-Extensions</string>
+		<key>F56AAB01-FA2D-4206-A2F9-B3C51B186B35</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/wh1100717/ios-demo.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F56AAB01-FA2D-4206-A2F9-B3C51B186B35</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F56AAB01-FA2D-4206-A2F9-B3C51B186B35</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ios-demo</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5D85D9B6-210E-4FDD-B85D-ADEF6AF99E47</string>
+			<key>IDESourceControlWCCName</key>
+			<string>NSDate-Extensions</string>
+		</dict>
+	</array>
+</dict>
+</plist>

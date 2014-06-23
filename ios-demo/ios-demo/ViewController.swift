@@ -16,14 +16,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-//        [self.navigationController.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]]];
-//        [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbar"] forBarMetrics:UIBarMetricsDefault];
-//        [self.view setBackgroundColor:[UIColor clearColor]];
-//        [self.tableView setBackgroundColor:[UIColor clearColor]];
-//        [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
-//        
-//        [self setTitle:@"Demo"];
         self.tableView = UITableView(frame:self.view.frame, style:.Plain)
         self.tableView!.registerClass(UITableViewCell.self, forCellReuseIdentifier: "CELL")
         self.navigationController.view.backgroundColor = UIColor(patternImage: UIImage(named: "background"))
@@ -56,26 +48,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return self.data!.count
     }
     
-    // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
-    // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
-    
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
         var cell = tableView.dequeueReusableCellWithIdentifier("CELL") as UITableViewCell!
         if !cell {
             cell = UITableViewCell(style:.Default, reuseIdentifier: "CELL")
         }
-//        var cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell!
-//        if (cell == nil) {
-//            cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "Cell")
-//        }
         var dict: Dictionary = self.data![indexPath.row]
         cell.textLabel.text = dict["text"]
-//        cell.backgroundView.backgroundColor = UIColor.clearColor()
+        cell.backgroundColor = UIColor.clearColor()
         cell.selectionStyle = .None
-        cell.imageView.image = UIImage(named: "icon")
+//        cell.
+        cell.image = UIImage(named: dict["icon"])
         return cell
     }
     
+    func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
+        return 84 as CGFloat
+    }
     
 
 }

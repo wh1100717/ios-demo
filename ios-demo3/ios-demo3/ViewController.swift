@@ -9,27 +9,50 @@
 import UIKit
 
 class ViewController: UIViewController {
-                            
+    
+    
+//    let locationManager:CLLocationManager = CLLocationManager()
+    
     @IBOutlet var dateLabel: UILabel
-
+    
+    var desiredAccuracy: INTULocationAccuracy?
+    var timeout: NSTimeInterval?
+    var locationRequestID: Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.blackColor()
         self.dateLabel.text = getFormatDate(NSDate.date())
-//        let attributes: Dictionary = ["NSFontAttributeName": UIFont(name: "GillSans-Light", size: 20), "NSForegroundColorAttributeName": UIColor.whiteColor()]
         self.dateLabel.font = UIFont(name: "GillSans-Light", size: 30 as CGFloat) //为啥不好使呢...
         self.dateLabel.textColor = UIColor.whiteColor()
-//        self.dateLabel.titleTextAttributes = attributes
+
+        self.desiredAccuracy = INTULocationAccuracy.City;
+        self.timeout = 10.0
+        
+        getLocation()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    func getLocation() {
+        let locationManager = INTULocationManager.sharedInstance()
+        self.locationRequestID = locationManager.requestLocationWithDesiredAccuracy(self.desiredAccuracy!,
+            timeout: self.timeout!,
+            delayUntilAuthorized: false,
+            block: { (currentLocation: CLLocation?, achievedAccuracy: INTULocationAccuracy?, status: INTULocationStatus?) in
+                println("\(status)")
+                if (status == INTULocationStatus.Success) {
+                    println(currentLocation)
+                }
+            }
+        )
+        println()
+    }
+    
     func getFormatDate(date:NSDate) -> String {
         let dateFormatter = NSDateFormatter()
-        println(date.weekday)
         if date.isThisYear() {
             dateFormatter.dateFormat = "MM月dd日"
         }else {

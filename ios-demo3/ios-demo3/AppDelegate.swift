@@ -9,15 +9,16 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
                             
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
+        
+        //StatusBar相关
         UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: .Slide)
         UIApplication.sharedApplication().setStatusBarStyle(.BlackOpaque, animated: false)
-
+        
         return true
     }
 

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		07276D2A19587726007AFB02 /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 07276D2719587726007AFB02 /* NSDate+Utilities.m */; };
+		07276D3619592A15007AFB02 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07276D331959280D007AFB02 /* CoreLocation.framework */; };
+		07276D3D19592F35007AFB02 /* INTULocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 07276D3919592F35007AFB02 /* INTULocationManager.m */; };
+		07276D3E19592F35007AFB02 /* INTULocationRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 07276D3B19592F35007AFB02 /* INTULocationRequest.m */; };
 		07A81E4919586C85006A856B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A81E4819586C85006A856B /* AppDelegate.swift */; };
 		07A81E4B19586C85006A856B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A81E4A19586C85006A856B /* ViewController.swift */; };
 		07A81E4E19586C85006A856B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07A81E4C19586C85006A856B /* Main.storyboard */; };
@@ -29,6 +32,12 @@
 		07276D2619587726007AFB02 /* NSDate+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utilities.h"; sourceTree = "<group>"; };
 		07276D2719587726007AFB02 /* NSDate+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utilities.m"; sourceTree = "<group>"; };
 		07276D3219587938007AFB02 /* ios-demo3-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ios-demo3-Bridging-Header.h"; path = "../ios-demo3-Bridging-Header.h"; sourceTree = "<group>"; };
+		07276D331959280D007AFB02 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		07276D3819592F35007AFB02 /* INTULocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INTULocationManager.h; sourceTree = "<group>"; };
+		07276D3919592F35007AFB02 /* INTULocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INTULocationManager.m; sourceTree = "<group>"; };
+		07276D3A19592F35007AFB02 /* INTULocationRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INTULocationRequest.h; sourceTree = "<group>"; };
+		07276D3B19592F35007AFB02 /* INTULocationRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INTULocationRequest.m; sourceTree = "<group>"; };
+		07276D3C19592F35007AFB02 /* INTULocationRequestDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INTULocationRequestDefines.h; sourceTree = "<group>"; };
 		07A81E4319586C85006A856B /* ios-demo3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-demo3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07A81E4719586C85006A856B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07A81E4819586C85006A856B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07276D3619592A15007AFB02 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +72,7 @@
 		07276D2319587726007AFB02 /* ThirdPartLibs */ = {
 			isa = PBXGroup;
 			children = (
+				07276D3719592F35007AFB02 /* LocationManager */,
 				07276D2419587726007AFB02 /* NSDate-Extensions */,
 			);
 			path = ThirdPartLibs;
@@ -76,12 +87,33 @@
 			path = "NSDate-Extensions";
 			sourceTree = "<group>";
 		};
+		07276D351959281E007AFB02 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				07276D331959280D007AFB02 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		07276D3719592F35007AFB02 /* LocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				07276D3819592F35007AFB02 /* INTULocationManager.h */,
+				07276D3919592F35007AFB02 /* INTULocationManager.m */,
+				07276D3A19592F35007AFB02 /* INTULocationRequest.h */,
+				07276D3B19592F35007AFB02 /* INTULocationRequest.m */,
+				07276D3C19592F35007AFB02 /* INTULocationRequestDefines.h */,
+			);
+			path = LocationManager;
+			sourceTree = "<group>";
+		};
 		07A81E3A19586C85006A856B = {
 			isa = PBXGroup;
 			children = (
 				07A81E4519586C85006A856B /* ios-demo3 */,
-				07A81E5819586C85006A856B /* ios-demo3Tests */,
+				07276D351959281E007AFB02 /* Frameworks */,
 				07A81E4419586C85006A856B /* Products */,
+				07A81E5819586C85006A856B /* ios-demo3Tests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -233,8 +265,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07276D3D19592F35007AFB02 /* INTULocationManager.m in Sources */,
 				07A81E4B19586C85006A856B /* ViewController.swift in Sources */,
 				07276D2A19587726007AFB02 /* NSDate+Utilities.m in Sources */,
+				07276D3E19592F35007AFB02 /* INTULocationRequest.m in Sources */,
 				07A81E4919586C85006A856B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

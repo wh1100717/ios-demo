@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ViewController: UIViewController {
     
@@ -15,21 +16,14 @@ class ViewController: UIViewController {
     
     @IBOutlet var dateLabel: UILabel
     
-    var desiredAccuracy: INTULocationAccuracy?
-    var timeout: NSTimeInterval?
-    var locationRequestID: Int?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.blackColor()
         self.dateLabel.text = getFormatDate(NSDate.date())
         self.dateLabel.font = UIFont(name: "GillSans-Light", size: 30 as CGFloat) //为啥不好使呢...
         self.dateLabel.textColor = UIColor.whiteColor()
-
-        self.desiredAccuracy = INTULocationAccuracy.City;
-        self.timeout = 10.0
         
-        getLocation()
+//        getLocation()
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,18 +31,17 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     func getLocation() {
-        let locationManager = INTULocationManager.sharedInstance()
-        self.locationRequestID = locationManager.requestLocationWithDesiredAccuracy(self.desiredAccuracy!,
-            timeout: self.timeout!,
-            delayUntilAuthorized: false,
-            block: { (currentLocation: CLLocation?, achievedAccuracy: INTULocationAccuracy?, status: INTULocationStatus?) in
-                println("\(status)")
-                if (status == INTULocationStatus.Success) {
-                    println(currentLocation)
-                }
-            }
-        )
-        println()
+//        self.locationManager = [[CLLocationManager alloc]init];
+//        self.locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers;
+//        self.locationManager.distanceFilter = 3000;
+//        self.locationManager.delegate = self;
+//        [self.locationManager startUpdatingLocation];
+
+        //  Initialize and configure the location manager and start updating the user's current location
+        println("start to get location")
+//        self.locationManager.startUpdatingLocation()
+        
+
     }
     
     func getFormatDate(date:NSDate) -> String {
@@ -81,5 +74,15 @@ class ViewController: UIViewController {
         }
         return stringDate
     }
+
+//    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: AnyObject[]!) {
+//        println("get location:")
+//        println("\(locations)")
+//    }
+//
+//    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
+//        println("Error occurs!")
+//        println("\(error)")
+//    }
 }
 

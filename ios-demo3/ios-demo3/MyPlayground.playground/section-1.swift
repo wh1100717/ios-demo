@@ -24,3 +24,6 @@ func getFormatDate(date:NSDate) -> String {
 
 getFormatDate(NSDate.date())
 //getFormatDate(NSDate())
+
+
+var arr: Array<AnyObject>?

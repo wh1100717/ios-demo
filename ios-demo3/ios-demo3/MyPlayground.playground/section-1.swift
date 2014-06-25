@@ -26,4 +26,15 @@ getFormatDate(NSDate.date())
 //getFormatDate(NSDate())
 
 
-var arr: Array<AnyObject>?
+var test2: String!
+test2
+test2?
+test2 = "test2"
+test2
+test2!
+test2?
+test2 = nil
+
+var test3: String = "test3"
+test3
+test3 = nil
